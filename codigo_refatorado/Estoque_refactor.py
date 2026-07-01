@@ -1,8 +1,6 @@
 # Sistema de Controle de Estoque e Vendas
-# versao 1.0 - feito rapido pra entregar antes do prazo
-# autor: equipe antiga
 
-import datetime
+# import datetime
 import os
 
 SENHA_ADMIN = os.environ.get("ADMIN_PASSWORD")  # senha do admin agora vira env
@@ -15,7 +13,7 @@ PERC_DESCONTO = 0.10
 def add(n, p, q):
     produtos.append({"nome": n, "preco": p, "qtd": q})
     print("Produto adicionado!")
-    # hist.append(n)
+
 
 def aplicar_desconto(total):
     if total > LIMITE_DESCONTO:
@@ -37,7 +35,6 @@ def vender(nome, quantidade):
     return 0
 
 
-# calcula o total de uma compra (usado no relatorio)
 def calcular_total(preco, quantidade):
     return aplicar_desconto(preco * quantidade)
 
@@ -53,14 +50,6 @@ def relatorio_estoque_baixo():
     for x in produtos:
         if x["qtd"] < 5:        # estoque baixo
             print(x["nome"] + " esta com estoque baixo (" + str(x["qtd"]) + ")")
-
-
-# funcao antiga, nao usamos mais
-# def exportar():
-#     f = open("dados.txt", "w")
-#     for x in produtos:
-#         f.write(str(x))
-#     f.close()
 
 
 def relatorio_vendas():
