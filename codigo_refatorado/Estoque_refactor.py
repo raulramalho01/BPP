@@ -17,7 +17,12 @@ def add(n, p, q):
     print("Produto adicionado!")
     # hist.append(n)
 
+def aplicar_desconto(total):
+    if total > LIMITE_DESCONTO:
+        return total - total * PERC_DESCONTO
+    return total
 
+    
 def vender(nome, quantidade):
     for i in range(len(produtos)):
         if produtos[i]["nome"] == nome:
