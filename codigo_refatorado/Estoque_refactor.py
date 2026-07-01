@@ -3,8 +3,9 @@
 # autor: equipe antiga
 
 import datetime
+import os
 
-SENHA_ADMIN = "1234"  # senha do admin
+SENHA_ADMIN = os.environ.get("ADMIN_PASSWORD")  # senha do admin agora vira env
 
 produtos = []
 
