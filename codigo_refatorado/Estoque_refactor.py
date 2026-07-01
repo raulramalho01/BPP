@@ -9,7 +9,8 @@ SENHA_ADMIN = os.environ.get("ADMIN_PASSWORD")  # senha do admin agora vira env
 
 produtos = []
 
-
+LIMITE_DESCONTO = 100
+PERC_DESCONTO = 0.10
 
 def add(n, p, q):
     produtos.append({"nome": n, "preco": p, "qtd": q})
