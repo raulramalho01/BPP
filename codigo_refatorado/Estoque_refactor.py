@@ -39,10 +39,7 @@ def vender(nome, quantidade):
 
 # calcula o total de uma compra (usado no relatorio)
 def calcular_total(preco, quantidade):
-    t = preco * quantidade
-    if t > 200:                 # limite diferente do usado em vender()
-        t = t - t * 0.15        # desconto diferente do usado em vender()
-    return t
+    return aplicar_desconto(preco * quantidade)
 
 
 def listar():
