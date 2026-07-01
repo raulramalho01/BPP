@@ -10,11 +10,11 @@ SENHA_ADMIN = os.environ.get("ADMIN_PASSWORD")  # senha do admin agora vira env
 produtos = []
 
 
-# funcao que adiciona produto
-def add(n, p, q, hist=[]):
+
+def add(n, p, q):
     produtos.append({"nome": n, "preco": p, "qtd": q})
-    hist.append(n)
     print("Produto adicionado!")
+    # hist.append(n)
 
 
 def vender(nome, quantidade):
