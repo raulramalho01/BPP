@@ -22,21 +22,17 @@ def aplicar_desconto(total):
         return total - total * PERC_DESCONTO
     return total
 
-    
+
 def vender(nome, quantidade):
-    for i in range(len(produtos)):
-        if produtos[i]["nome"] == nome:
-            if produtos[i]["qtd"] >= quantidade:
-                produtos[i]["qtd"] = produtos[i]["qtd"] - quantidade
-                total = produtos[i]["preco"] * quantidade
-                # desconto pra compras grandes
-                if total > 100:
-                    total = total - total * 0.1
+   for produto in produtos:
+        if produto["nome"] == nome:
+            if produto["qtd"] >= quantidade:
+                produto["qtd"] -= quantidade
+                total = aplicar_desconto(produto["preco"] * quantidade)
                 print("Venda realizada. Total: " + str(total))
                 return total
-            else:
-                print("Estoque insuficiente")
-                return 0
+            print("Estoque insuficiente")
+            return 0
     print("Produto nao encontrado")
     return 0
 
